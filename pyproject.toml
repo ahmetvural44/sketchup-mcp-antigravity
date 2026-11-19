@@ -1,6 +1,6 @@
 [project]
 name = "sketchup-mcp"
-version = "0.1.17"
+version = "0.1.17.post1"
 description = "Sketchup integration through Model Context Protocol"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -14,12 +14,12 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 dependencies = [
-    "mcp[cli]>=1.3.0"
+    "mcp[cli]>=1.3.0,<2"
 ]
 
 [project.urls]
-Homepage = "https://github.com/yourusername/sketchup-mcp"
-Issues = "https://github.com/yourusername/sketchup-mcp/issues"
+Homepage = "https://github.com/ahmetvural44/sketchup-mcp-antigravity"
+Issues = "https://github.com/ahmetvural44/sketchup-mcp-antigravity/issues"
 
 [project.scripts]
 sketchup-mcp = "sketchup_mcp.server:main"

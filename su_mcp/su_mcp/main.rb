@@ -582,11 +582,12 @@ module SU_MCP
       selected_entities = selection.map do |entity|
         {
           id: entity.entityID,
-          type: entity.typename.downcase
+          type: entity.typename.downcase,
+          name: (entity.respond_to?(:name) ? entity.name : '')
         }
       end
       
-      { success: true, entities: selected_entities }
+      { success: true, entities: selected_entities, result: selected_entities.to_json }
     end
     
     def export_scene(params)

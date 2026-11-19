@@ -1,3 +1,25 @@
+# SketchUp MCP for Antigravity
+
+This fork connects Google Antigravity to the active model in SketchUp Desktop. The MCP client starts even when SketchUp is closed. Once the SketchUp bridge is started, each tool call opens one local connection. Tested on Windows with SketchUp 2027.
+
+## Windows kurulumu
+
+Python 3.10 veya üzeri, masaüstü SketchUp ve Google Antigravity gerekir. Kullandığınız SketchUp sürümünü en az bir kez açın. Bu depoyu indirin ve proje klasöründe çalıştırın:
+
+```powershell
+py -3 scripts/install_antigravity.py
+```
+
+1. SketchUp'ı yeniden açın. Kullanmak istediğiniz modelin penceresinde **Extensions → MCP Server → Start Server** seçeneğini tıklayın. Aynı anda yalnızca bir SketchUp penceresinde sunucuyu başlatın.
+2. Antigravity ayarlarında **MCP Servers** listesini yenileyin. Gerekirse Antigravity'yi yeniden açın. Sunucu adı **sketchup-mhyrr**.
+3. Bir nesne seçin ve Antigravity'ye “SketchUp'ta seçili nesnenin türünü ve kimliğini göster” yazın.
+
+Kurulum betiği Python paketini kullanıcı hesabınıza ait ayrı bir ortama kurar, Ruby uzantısını kurulu SketchUp sürümlerine kopyalar ve Antigravity'nin `~/.gemini/config/mcp_config.json` dosyasına bir kayıt ekler. SketchUp bağlantısı yalnızca bu bilgisayarda, `127.0.0.1:9876` adresinde çalışır. **Stop Server** ile durdurabilirsiniz.
+
+## Upstream project
+
+Based on [mhyrr/sketchup-mcp](https://github.com/mhyrr/sketchup-mcp). The original documentation follows.
+
 # SketchupMCP - Sketchup Model Context Protocol Integration
 
 SketchupMCP connects Sketchup to Claude AI through the Model Context Protocol (MCP), allowing Claude to directly interact with and control Sketchup. This integration enables prompt-assisted 3D modeling, scene creation, and manipulation in Sketchup.
